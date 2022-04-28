@@ -4,7 +4,7 @@
 repository=$1
 
 # Push Docker images to the repository
-for image in config_nginx config_web
+for image in gateway_nginx gateway_web
 do
   docker tag $image:latest $repository-$image:latest
   docker push $repository-$image:latest
