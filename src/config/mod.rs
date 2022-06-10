@@ -8,6 +8,10 @@ pub fn redis_uri() -> String {
     env::var("REDIS_URI").expect("REDIS_URI missing in env")
 }
 
+pub fn redis_uri_mainnet() -> String {
+    env::var("REDIS_URI_MAINNET").expect("REDIS_URI_MAINNET missing in env")
+}
+
 pub fn base_config_service_uri() -> String {
     format!(
         "{}{}",
@@ -84,10 +88,6 @@ pub fn balances_cache_duration() -> usize {
 
 pub fn balances_core_request_cache_duration() -> usize {
     env_with_default("BALANCES_CORE_REQUEST_CACHE_DURATION", indefinite_timeout())
-}
-
-pub fn safe_app_manifest_cache_duration() -> usize {
-    env_with_default("SAFE_APP_MANIFEST_CACHE_DURATION", indefinite_timeout())
 }
 
 pub fn owners_for_safes_cache_duration() -> usize {
@@ -171,6 +171,10 @@ pub fn feature_flag_nested_decoding() -> bool {
 
 pub fn feature_flag_balances_rate_implementation() -> bool {
     env_with_default("FEATURE_FLAG_BALANCES_RATE_IMPLEMENTATION", false)
+}
+
+pub fn is_safe_apps_tags_feature_enabled() -> bool {
+    env_with_default("SAFE_APPS_TAGS_FEATURE_ENABLED", false)
 }
 
 pub fn vpc_transaction_service_uri() -> bool {
