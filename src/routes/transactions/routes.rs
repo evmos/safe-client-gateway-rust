@@ -1,17 +1,20 @@
+use rocket::response::content;
+use rocket::serde::json::{Error, Json};
+use rocket_okapi::openapi;
+
 use crate::cache::cache_operations::CacheResponse;
 use crate::cache::manager::ChainCache;
 use crate::config::tx_queued_cache_duration;
 use crate::routes::transactions::filters::module::ModuleFilters;
 use crate::routes::transactions::filters::multisig::MultisigFilters;
 use crate::routes::transactions::filters::transfer::TransferFilters;
-use crate::routes::transactions::handlers::{details, history, proposal, queued};
+use crate::routes::transactions::handlers::preview::TransactionPreviewRequest;
+use crate::routes::transactions::handlers::{details, history, preview, proposal, queued};
 use crate::routes::transactions::models::requests::{
     ConfirmationRequest, MultisigTransactionRequest,
 };
 use crate::utils::context::RequestContext;
 use crate::utils::errors::ApiResult;
-use rocket::response::content;
-use rocket::serde::json::{Error, Json};
 
 use super::handlers::{module, multisig, transfers};
 
@@ -31,6 +34,7 @@ use super::handlers::{module, multisig, transfers};
 /// ## Query paramets
 ///
 /// There aren't any query parameters that can be passed to this endpoint.
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/transactions/<details_id>")]
 pub async fn get_transactions(
     context: RequestContext,
@@ -121,6 +125,7 @@ pub async fn post_confirmation<'e>(
 /// - `<cursor>` is the desired page of data to be loaded. Values for this parameter can be either `Page.next` or `Page.previous`. **WARNING:** Don't fiddle with the values of these 2 fields.
 /// - `<timezone_offset>`: Currently ignored by the gateway.
 /// - `<trusted>`: forwarded directly to the core services. Only for debugging purposes clients **should not** send it (unless they know what they are doing).
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/safes/<safe_address>/transactions/history?<cursor>&<timezone_offset>")]
 pub async fn get_transactions_history(
     context: RequestContext,
@@ -168,6 +173,7 @@ pub async fn get_transactions_history(
 /// - `<cursor>` is the desired page of data to be loaded. Values for this parameter can be either `Page.next` or `Page.previous`. **WARNING:** Don't fiddle with the values of these 2 fields.
 /// - `<timezone_offset>`: Currently ignored by the gateway.
 /// - `<trusted>`: forwarded directly to the core services. Only for debugging purposes clients **should not** send it (unless they know what they are doing).
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/safes/<safe_address>/transactions/queued?<cursor>&<timezone_offset>&<trusted>")]
 pub async fn get_transactions_queued(
     context: RequestContext,
@@ -235,6 +241,7 @@ pub async fn post_transaction<'e>(
     return tx_details;
 }
 
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/safes/<safe_address>/incoming-transfers?<cursor>&<filters..>")]
 pub async fn get_incoming_transfers(
     context: RequestContext,
@@ -251,6 +258,7 @@ pub async fn get_incoming_transfers(
         .await
 }
 
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/safes/<safe_address>/module-transactions?<cursor>&<filters..>")]
 pub async fn get_module_transactions(
     context: RequestContext,
@@ -267,6 +275,7 @@ pub async fn get_module_transactions(
         .await
 }
 
+#[openapi(tag = "Transactions")]
 #[get("/v1/chains/<chain_id>/safes/<safe_address>/multisig-transactions?<cursor>&<filters..>")]
 pub async fn get_multisig_transactions(
     context: RequestContext,
@@ -283,6 +292,30 @@ pub async fn get_multisig_transactions(
                 &safe_address,
                 &cursor,
                 &filters,
+            )
+        })
+        .execute()
+        .await
+}
+
+#[post(
+    "/v1/chains/<chain_id>/transactions/<safe_address>/preview",
+    format = "application/json",
+    data = "<transaction_preview_request>"
+)]
+pub async fn post_preview_transaction(
+    context: RequestContext,
+    chain_id: String,
+    safe_address: String,
+    transaction_preview_request: Json<TransactionPreviewRequest>,
+) -> ApiResult<content::RawJson<String>> {
+    CacheResponse::new(&context, ChainCache::from(chain_id.as_str()))
+        .resp_generator(|| {
+            preview::preview_transaction(
+                &context,
+                &chain_id,
+                &safe_address,
+                &transaction_preview_request.0,
             )
         })
         .execute()
