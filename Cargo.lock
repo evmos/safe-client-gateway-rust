@@ -151,14 +151,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.8.0"
 
 [[package]]
-checksum = "b081e2864000416c5a4543fed63fb8dd979c4a0806b071fddab0e548c6cd4c74"
+checksum = "8310da711a26fa0326202261abd73a414340f3ec957f63927a055511a01d7fb2"
 dependencies = [
   "async-trait",
   "bb8",
   "redis",
 ]
 name = "bb8-redis"
+name = "bb8-redis"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.12.0"
 version = "0.11.0"
 
 [[package]]
@@ -506,13 +509,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.11.0"
 
 [[package]]
-checksum = "56899898ce76aaf4a0f24d914c97ea6ed976d42fec6ad33fcbb0a1103e07b2b0"
-name = "dtoa"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-version = "0.4.8"
-
-[[package]]
-checksum = "140206b78fb2bc3edbcfc9b5ccbd0b30699cfe8d348b8b31b330e47df5291a5a"
 name = "dyn-clone"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.6"
@@ -701,9 +697,10 @@ version = "1.0.0"
 
 [[package]]
 checksum = "69a039c3498dc930fe810151a34ba0c1c70b02b8625035592e74432f678591f2"
+checksum = "6c2141d6d6c8512188a7891b4b01590a45f6dac67afb4f255c4124dbb86d4eaa"
 name = "fragile"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-version = "1.0.0"
+version = "2.0.0"
 
 [[package]]
 checksum = "fed34cd105917e91daa4da6b3728c47b068749d6a62c59811f06ed2ac71d9da7"
@@ -1239,7 +1236,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.3.6"
 
 [[package]]
-checksum = "e2be9a9090bc1cac2930688fa9478092a64c6a92ddc6ae0692d46b37d9cab709"
+checksum = "50e4a1c770583dac7ab5e2f6c139153b783a53a1bbee9729613f193e59828326"
 dependencies = [
   "cfg-if 1.0.0",
   "downcast",
@@ -1250,11 +1247,14 @@ dependencies = [
   "predicates-tree",
 ]
 name = "mockall"
+name = "mockall"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.11.3"
 version = "0.11.2"
 
 [[package]]
-checksum = "86d702a0530a0141cf4ed147cf5ec7be6f2c187d4e37fcbefc39cf34116bfe8f"
+checksum = "832663583d5fa284ca8810bf7015e46c9fff9622d3cf34bd1eea5003fec06dd0"
 dependencies = [
   "cfg-if 1.0.0",
   "proc-macro2",
@@ -1262,7 +1262,10 @@ dependencies = [
   "syn",
 ]
 name = "mockall_derive"
+name = "mockall_derive"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.11.3"
 version = "0.11.2"
 
 [[package]]
@@ -1776,22 +1779,25 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.2.0"
 
 [[package]]
-checksum = "1a80b5f38d7f5a020856a0e16e40a9cfabf88ae8f0e4c2dcd8a3114c1e470852"
+checksum = "2e5450e9add55de0ea728a964191669d3707fa20666c5f16753f3a6a51e96231"
 dependencies = [
   "async-trait",
   "bytes 1.0.1",
   "combine",
-  "dtoa",
   "futures-util",
-  "itoa 0.4.6",
+  "itoa 1.0.1",
   "percent-encoding",
   "pin-project-lite",
+  "ryu",
   "tokio",
-  "tokio-util 0.6.3",
+  "tokio-util 0.7.1",
   "url",
 ]
 name = "redis"
+name = "redis"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.22.0"
 version = "0.21.5"
 
 [[package]]
@@ -2108,6 +2114,8 @@ dependencies = [
   "tokio",
 ]
 name = "safe-client-gateway"
+name = "safe-client-gateway"
+version = "3.38.0"
 version = "3.35.1"
 
 [[package]]
@@ -2206,23 +2214,29 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.14"
 
 [[package]]
-checksum = "728eb6351430bccb993660dfffc5a72f91ccc1295abaa8ce19b27ebe4f75568b"
+checksum = "d193d69bae983fc11a79df82342761dfbf28a99fc8d203dca4c3c1b590948965"
 dependencies = [
   "serde_derive",
 ]
 name = "serde"
+name = "serde"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "1.0.147"
 version = "1.0.145"
 
 [[package]]
-checksum = "81fa1584d3d1bcacd84c277a0dfe21f5b0f6accf4a23d04d4c6d61f1af522b4c"
+checksum = "4f1d362ca8fc9c3e3a7484440752472d68a6caa98f1ab81d99b5dfe517cec852"
 dependencies = [
   "proc-macro2",
   "quote",
   "syn",
 ]
 name = "serde_derive"
+name = "serde_derive"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "1.0.147"
 version = "1.0.145"
 
 [[package]]
@@ -2237,14 +2251,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.26.0"
 
 [[package]]
-checksum = "41feea4228a6f1cd09ec7a3593a682276702cd67b5273544757dae23c096f074"
+checksum = "6ce777b7b150d76b9cf60d28b55f5847135a003f7d7350c6be7a773508ce7d45"
 dependencies = [
   "itoa 1.0.1",
   "ryu",
   "serde",
 ]
 name = "serde_json"
+name = "serde_json"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "1.0.87"
 version = "1.0.86"
 
 [[package]]

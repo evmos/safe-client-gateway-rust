@@ -2,12 +2,14 @@
 authors = ["jpalvarezl <jose.alvarez@gnosis.io>", "rmeissner <richard@gnosis.io>", "fmrsabino <frederico@gnosis.io>"]
 edition = "2018"
 name = "safe-client-gateway"
+name = "safe-client-gateway"
+version = "3.38.0"
 version = "3.35.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bb8-redis = "0.11.0"
+bb8-redis = "0.12.0"
 bigdecimal = {version = "0.3.0", features = ["serde"]}
 chrono = {version = "0.4.22", features = ["serde"]}
 derivative = "2.2.0"
@@ -18,8 +20,9 @@ ethcontract-common = "0.15.4"
 itertools = "0.10.5"
 lazy_static = "1.4.0"
 log = "0.4.17"
-mockall = "0.11.2"
+mockall = "0.11.3"
 r2d2 = "0.8.10"
+rand = "0.8.5"
 rand = "0.8.5"
 regex = "1.6.0"
 reqwest = {version = "0.11.12", features = ["json"]}
@@ -27,8 +30,8 @@ rocket = {version = "0.5.0-rc.2", features = ["tls", "json"]}
 rocket_codegen = {version = "0.5.0-rc.2"}
 rocket_okapi = {version = "0.8.0-rc.2", features = ["swagger"]}
 semver = "1.0.14"
-serde = {version = "1.0.145", features = ["derive"]}
-serde_json = {version = "1.0.86", features = ["raw_value"]}
+serde = {version = "1.0.147", features = ["derive"]}
+serde_json = {version = "1.0.87", features = ["raw_value"]}
 serde_repr = "0.1.9"
 thiserror = "1.0.37"
 tokio = "1.16.1"
