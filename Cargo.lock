@@ -158,11 +158,8 @@ dependencies = [
   "redis",
 ]
 name = "bb8-redis"
-name = "bb8-redis"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.12.0"
-version = "0.11.0"
 
 [[package]]
 checksum = "6aaf33151a6429fe9211d1b276eafdf70cdff28b071e76c0b0e1503221ea3744"
@@ -509,6 +506,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.11.0"
 
 [[package]]
+checksum = "140206b78fb2bc3edbcfc9b5ccbd0b30699cfe8d348b8b31b330e47df5291a5a"
 name = "dyn-clone"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.6"
@@ -696,7 +694,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.0"
 
 [[package]]
-checksum = "69a039c3498dc930fe810151a34ba0c1c70b02b8625035592e74432f678591f2"
 checksum = "6c2141d6d6c8512188a7891b4b01590a45f6dac67afb4f255c4124dbb86d4eaa"
 name = "fragile"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1247,11 +1244,8 @@ dependencies = [
   "predicates-tree",
 ]
 name = "mockall"
-name = "mockall"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.11.3"
-version = "0.11.2"
 
 [[package]]
 checksum = "832663583d5fa284ca8810bf7015e46c9fff9622d3cf34bd1eea5003fec06dd0"
@@ -1262,11 +1256,8 @@ dependencies = [
   "syn",
 ]
 name = "mockall_derive"
-name = "mockall_derive"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.11.3"
-version = "0.11.2"
 
 [[package]]
 checksum = "0fdd568fea4758b30d6423f013f7171e193c34aa97828d1bd9f924fb3af30a8c"
@@ -1794,11 +1785,8 @@ dependencies = [
   "url",
 ]
 name = "redis"
-name = "redis"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "0.22.0"
-version = "0.21.5"
 
 [[package]]
 checksum = "41cc0f7e4d5d4544e8861606a285bb08d3e70712ccc7d2b84d7c0ccfaf4b05ce"
@@ -2114,9 +2102,7 @@ dependencies = [
   "tokio",
 ]
 name = "safe-client-gateway"
-name = "safe-client-gateway"
 version = "3.38.0"
-version = "3.35.1"
 
 [[package]]
 checksum = "8f05ba609c234e60bee0d547fe94a4c7e9da733d1c962cf6e59efa4cd9c8bc75"
@@ -2219,11 +2205,8 @@ dependencies = [
   "serde_derive",
 ]
 name = "serde"
-name = "serde"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.147"
-version = "1.0.145"
 
 [[package]]
 checksum = "4f1d362ca8fc9c3e3a7484440752472d68a6caa98f1ab81d99b5dfe517cec852"
@@ -2233,11 +2216,8 @@ dependencies = [
   "syn",
 ]
 name = "serde_derive"
-name = "serde_derive"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.147"
-version = "1.0.145"
 
 [[package]]
 checksum = "85bf8229e7920a9f636479437026331ce11aa132b4dde37d121944a44d6e5f3c"
@@ -2258,11 +2238,8 @@ dependencies = [
   "serde",
 ]
 name = "serde_json"
-name = "serde_json"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 version = "1.0.87"
-version = "1.0.86"
 
 [[package]]
 checksum = "1fe39d9fbb0ebf5eb2c7cb7e2a47e4f462fad1379f1166b8ae49ad9eae89a7ca"
