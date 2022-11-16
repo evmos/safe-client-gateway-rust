@@ -2,9 +2,7 @@
 authors = ["jpalvarezl <jose.alvarez@gnosis.io>", "rmeissner <richard@gnosis.io>", "fmrsabino <frederico@gnosis.io>"]
 edition = "2018"
 name = "safe-client-gateway"
-name = "safe-client-gateway"
 version = "3.39.0"
-version = "3.38.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
