@@ -2102,6 +2102,8 @@ dependencies = [
   "tokio",
 ]
 name = "safe-client-gateway"
+name = "safe-client-gateway"
+version = "3.39.0"
 version = "3.38.0"
 
 [[package]]
