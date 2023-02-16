@@ -9,6 +9,10 @@
     "provider": null,
     "accessControl": {
       "type": "NO_RESTRICTIONS"
-    }
+    },
+    "tags": [],
+    "features": [],
+    "developerWebsite": null,
+    "socialProfiles": []
   }
 ]

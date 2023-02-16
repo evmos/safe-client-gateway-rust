@@ -11,9 +11,18 @@ pub struct SafeApp {
     pub chain_ids: Vec<u64>,
     pub provider: Option<SafeAppProvider>,
     pub access_control: SafeAppAccessControlPolicies,
-    // We set this value as a default since this feature might not be enabled yet. See SAFE_APPS_TAGS_FEATURE_ENABLED
     #[serde(default)]
     pub tags: Vec<String>,
+    pub features: Vec<String>,
+    pub developer_website: Option<String>,
+    pub social_profiles: Vec<SafeAppSocialProfile>,
+}
+
+#[derive(Deserialize, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct SafeAppSocialProfile {
+    pub platform: String,
+    pub url: String,
 }
 
 #[derive(Deserialize, Debug, PartialEq, Clone)]
